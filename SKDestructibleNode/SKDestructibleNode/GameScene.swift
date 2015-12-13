@@ -18,7 +18,7 @@ class GameScene: SKScene {
         self.physicsWorld.gravity = CGVector(dx: 0, dy: -1.5)
         self.physicsBody = SKPhysicsBody(edgeLoopFromRect: self.frame)
         
-        brokenNode = SKDestructibleNode(imageName: "Mario.png", scene: self, initialPosition: center, pieceSize: 40)
+        brokenNode = SKDestructibleNode(imageName: "SinisterClown.png", scene: self, initialPosition: center, pieceSize: 25)
         self.addChild(brokenNode)
     }
     
