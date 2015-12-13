@@ -19,30 +19,44 @@ class SKDestructibleNode : SKSpriteNode {
         super.init(texture: texture, color: color, size: size)
     }
     
-    convenience init(imageName: String, scene: SKScene, initialPosition: CGPoint, pieceSize : CGFloat){
+    convenience init(test : String){
+        self.init(imageNamed: test)
+    }
+    
+    convenience init(imageName: String, scene: SKScene, pieceSize : CGFloat){
         self.init(imageNamed: imageName)
-        self.position = initialPosition
         self.nodeScene = scene
         
-        let xScale = (pieceSize / self.size.width)
-        let yScale = (pieceSize / self.size.height)
+        createRectPieces(imageName, rectSize: CGSize(width: pieceSize, height: pieceSize))
+    }
+    
+    convenience init(imageName: String, scene: SKScene, rectSize : CGSize){
+        self.init(imageNamed: imageName)
+        self.nodeScene = scene
         
-        let numSquaresAcross = Int(self.size.width / pieceSize) + 1
-        let numSquaresUp = Int(self.size.height / pieceSize) + 1
+        createRectPieces(imageName, rectSize: rectSize)
+    }
+    
+    private func createRectPieces(imageName: String, rectSize : CGSize) {
+        let xScale = (rectSize.width / self.size.width)
+        let yScale = (rectSize.height / self.size.height)
+        
+        let numSquaresAcross = Int(self.size.width / rectSize.width) +  1
+        let numSquaresUp = Int(self.size.height / rectSize.height) + 1
         
         let clone = SKSpriteNode(imageNamed: imageName)
         
         for var i = 0; i < numSquaresAcross; i++ {
             for var j = 0; j < numSquaresUp; j++ {
                 let crop = SKCropNode()
-                let mask = SKSpriteNode(color: UIColor.blackColor(), size: CGSize(width: pieceSize, height: pieceSize))
-                mask.position = CGPoint(x: (CGFloat(i) * (pieceSize)) + (pieceSize/2) - self.size.width/2, y: (CGFloat(j) * (pieceSize)) + (pieceSize/2) - self.size.height/2)
+                let mask = SKSpriteNode(color: UIColor.blackColor(), size: CGSize(width: rectSize.width, height: rectSize.height))
+                mask.position = CGPoint(x: (CGFloat(i) * (rectSize.width)) + (rectSize.width/2) - self.size.width/2, y: (CGFloat(j) * (rectSize.height)) + (rectSize.height/2) - self.size.height/2)
                 
                 crop.addChild(clone)
                 crop.maskNode = mask
                 crop.position = self.position
                 
-                let spriteNode = SKSpriteNode(texture: scene.view?.textureFromNode(crop), size: CGSize(width: pieceSize / xScale, height: pieceSize / yScale))
+                let spriteNode = SKSpriteNode(texture: nodeScene.view?.textureFromNode(crop), size: CGSize(width: rectSize.width / xScale, height: rectSize.height / yScale))
                 
                 spriteNode.position = crop.position
                 spriteNode.physicsBody = SKPhysicsBody(texture: spriteNode.texture!, alphaThreshold: 0.01, size: spriteNode.size)
@@ -53,7 +67,7 @@ class SKDestructibleNode : SKSpriteNode {
                 pieces.append(spriteNode)
             }
         }
-        
+
     }
     
     func destroy() -> Array<SKSpriteNode> {
