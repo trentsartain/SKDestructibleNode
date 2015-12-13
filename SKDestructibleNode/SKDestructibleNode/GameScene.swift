@@ -22,7 +22,7 @@ class GameScene: SKScene {
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        let pieces = destructibleNode.destroyWithBoom(0.02, atPoint: destructibleNode.position)
+        let pieces = destructibleNode.destroyWithBoom(0.015, atPoint: destructibleNode.position)
         print(pieces.count)
     }
     
@@ -34,7 +34,7 @@ class GameScene: SKScene {
     }
     
     func addDestructibleNode() {
-        destructibleNode = SKDestructibleNode(imageName: "House.png", scene: self, pieceSize: 25)
+        destructibleNode = SKDestructibleNode(imageName: "SinisterClown.png", scene: self, pieceSize: 25)
         destructibleNode.position = center
         self.addChild(destructibleNode)
     }
