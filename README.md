@@ -26,6 +26,11 @@ self.addChild(node)
 //The broken pieces are returned as an array of SKSpriteNodes
 let pieces = node.destroy()
 ```
+
+Alternatively, you can destroy the node with a boom: 
+```swift
+let pieces = destructibleNode.destroyWithBoom(0.015, atPoint: destructibleNode.position)
+```
 The SKDestructibleNode class takes care of matching the original nodes position, rotation, velocity, etc.  
 
 ### Examples
@@ -33,6 +38,7 @@ The SKDestructibleNode class takes care of matching the original nodes position,
 ![Mario](MarioBreak.gif)
 ![Bacon](BaconCrumble.gif)
 ![Clown](ClownDestruction.gif)
+![Boom](SquareBoom)
 
 ### Caveats
 
