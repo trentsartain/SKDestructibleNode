@@ -10,25 +10,32 @@ import SpriteKit
 
 class GameScene: SKScene {
     var center = CGPoint()
-    var brokenNode = SKDestructibleNode()
+    var destructibleNode = SKDestructibleNode()
     
     override func didMoveToView(view: SKView) {
-        center = CGPoint(x: self.size.width/2, y: self.size.height/2)
-        self.backgroundColor = UIColor.whiteColor()
-        self.physicsWorld.gravity = CGVector(dx: 0, dy: -1.5)
-        self.physicsBody = SKPhysicsBody(edgeLoopFromRect: self.frame)
-        
-        brokenNode = SKDestructibleNode(imageName: "SinisterClown.png", scene: self, pieceSize: 25)
-        brokenNode.position = center
-        self.addChild(brokenNode)
-    }
-    
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        let pieces = brokenNode.destroy()
-        print(pieces.count)
+        setupScene()
+        addDestructibleNode()
     }
     
     override func update(currentTime: CFTimeInterval) {
         
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        let pieces = destructibleNode.destroy()
+        print(pieces.count)
+    }
+    
+    func setupScene() {
+        center = CGPoint(x: self.size.width/2, y: self.size.height/2)
+        self.backgroundColor = UIColor.whiteColor()
+        self.physicsWorld.gravity = CGVector(dx: 0, dy: -1.5)
+        self.physicsBody = SKPhysicsBody(edgeLoopFromRect: self.frame)
+    }
+    
+    func addDestructibleNode() {
+        destructibleNode = SKDestructibleNode(imageName: "SinisterClown.png", scene: self, pieceSize: 25)
+        destructibleNode.position = center
+        self.addChild(destructibleNode)
     }
 }

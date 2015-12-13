@@ -60,7 +60,6 @@ class SKDestructibleNode : SKSpriteNode {
                 pieces.append(spriteNode)
             }
         }
-
     }
     
     func destroy() -> Array<SKSpriteNode> {
