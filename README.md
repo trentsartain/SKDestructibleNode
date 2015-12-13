@@ -38,7 +38,7 @@ The SKDestructibleNode class takes care of matching the original nodes position,
 ![Mario](MarioBreak.gif)
 ![Bacon](BaconCrumble.gif)
 ![Clown](ClownDestruction.gif)
-![Boom](SquareBoom)
+![Boom](SquareBoom.gif)
 
 ### Caveats
 
