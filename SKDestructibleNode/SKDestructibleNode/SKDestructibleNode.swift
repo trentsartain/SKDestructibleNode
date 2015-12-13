@@ -50,11 +50,8 @@ class SKDestructibleNode : SKSpriteNode {
                 
                 crop.addChild(clone)
                 crop.maskNode = mask
-                crop.position = self.position
                 
                 let spriteNode = SKSpriteNode(texture: nodeScene.view?.textureFromNode(crop), size: CGSize(width: rectSize.width / xScale, height: rectSize.height / yScale))
-                
-                spriteNode.position = crop.position
                 spriteNode.physicsBody = SKPhysicsBody(texture: spriteNode.texture!, alphaThreshold: 0.01, size: spriteNode.size)
                 
                 //TODO: Images with no content fail to create physicsBodies.
