@@ -45,7 +45,7 @@ class SKDestructibleNode : SKSpriteNode {
         for var i = 0; i < numSquaresAcross; i++ {
             for var j = 0; j < numSquaresUp; j++ {
                 let crop = SKCropNode()
-                let mask = SKSpriteNode(color: UIColor.blackColor(), size: CGSize(width: rectSize.width, height: rectSize.height))
+                let mask = SKSpriteNode(color: UIColor.blackColor(), size: rectSize)
                 mask.position = CGPoint(x: (CGFloat(i) * (rectSize.width)) + (rectSize.width/2) - self.size.width/2, y: (CGFloat(j) * (rectSize.height)) + (rectSize.height/2) - self.size.height/2)
                 
                 crop.addChild(clone)
