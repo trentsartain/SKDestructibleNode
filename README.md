@@ -11,7 +11,8 @@ The code for the SKDestructibleNode class can be found in SKDestructibleNode.swi
 let center = CGPoint(x: self.size.width/2, y: self.size.height/2)
 let node = SKDestructibleNode(imageName: "SinisterClown.png", scene: self, initialPosition: center, pieceSize: 25)
 
-node.destroy()
+//The broken pieces are returned as an array of SKSpriteNodes
+let pieces = node.destroy()
 ```
 
 The SKDestructibleNode class takes care of matching the original nodes position, rotation, velocity, etc.  
