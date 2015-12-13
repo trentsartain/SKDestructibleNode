@@ -5,6 +5,8 @@ The image is broken up into square pieces and torn apart.  Physics bodies are cr
 
 ### Usage
 
+The code for the SKDestructibleNode class can be found in SKDestructibleNode.swift.
+
 ```swift
 let node = SKDestructibleNode(imageName: "SinisterClown.png", scene: self, initialPosition: center, pieceSize: 25)
 
