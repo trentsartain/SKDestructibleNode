@@ -1,7 +1,7 @@
 # SKDestructibleNode
 This is an extension of the SKSpriteNode class and allows for destructible image nodes. It allows for an image to be rendered and used as an SKSpriteNode with the added feature of being able to be destroyed on command.  
 
-The image is broken up into square pieces and torn apart.  
+The image is broken up into square pieces and torn apart.  Physics bodies are created based on the alpha of the piece.  Therefore, more intricate pieces will have more intricate physics bodies (and will therefore have a performance impact).  All in all, the performance stays relatively good for most images. 
 
 ### Usage
 
@@ -18,3 +18,9 @@ The SKDestructibleNode class takes care of matching the original nodes position,
 ![Mario](MarioBreak.gif)
 ![Bacon](BaconCrumble.gif)
 ![Clown](ClownDestruction.gif)
+
+### Caveats
+
+* Creating the physicsBodies this way is expensive.  The simpler the image, the better the performance will be.  Squares and circles work best. 
+* You will need to mess with the number of pieces for the given image.  The pieces are stored so that they can be instantly added to the scene upon destruction.  This means that the more pieces required to compose the image, the more memory will be eaten.
+* Some images just don't work well with this.  Images with lots of detail (with alpha) will slow performance to a crawl. I'm working on some optimizations. 
