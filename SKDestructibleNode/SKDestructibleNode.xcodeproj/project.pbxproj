@@ -15,12 +15,6 @@
 		960480F21C1DCFA300841E01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 960480F11C1DCFA300841E01 /* Assets.xcassets */; };
 		960480F51C1DCFA300841E01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 960480F31C1DCFA300841E01 /* LaunchScreen.storyboard */; };
 		967E7E281C1DCFD600416BB3 /* SKDestructibleNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967E7E271C1DCFD600416BB3 /* SKDestructibleNode.swift */; };
-		967E7E2F1C1DD01800416BB3 /* Circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 967E7E291C1DD01800416BB3 /* Circle.png */; };
-		967E7E301C1DD01800416BB3 /* Mario.png in Resources */ = {isa = PBXBuildFile; fileRef = 967E7E2A1C1DD01800416BB3 /* Mario.png */; };
-		967E7E311C1DD01800416BB3 /* House.png in Resources */ = {isa = PBXBuildFile; fileRef = 967E7E2B1C1DD01800416BB3 /* House.png */; };
-		967E7E321C1DD01800416BB3 /* SinisterClown.png in Resources */ = {isa = PBXBuildFile; fileRef = 967E7E2C1C1DD01800416BB3 /* SinisterClown.png */; };
-		967E7E331C1DD01800416BB3 /* Bacon.png in Resources */ = {isa = PBXBuildFile; fileRef = 967E7E2D1C1DD01800416BB3 /* Bacon.png */; };
-		967E7E341C1DD01800416BB3 /* RoundedSquare.png in Resources */ = {isa = PBXBuildFile; fileRef = 967E7E2E1C1DD01800416BB3 /* RoundedSquare.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,12 +28,6 @@
 		960480F41C1DCFA300841E01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		960480F61C1DCFA300841E01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		967E7E271C1DCFD600416BB3 /* SKDestructibleNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKDestructibleNode.swift; sourceTree = "<group>"; };
-		967E7E291C1DD01800416BB3 /* Circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Circle.png; sourceTree = "<group>"; };
-		967E7E2A1C1DD01800416BB3 /* Mario.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Mario.png; sourceTree = "<group>"; };
-		967E7E2B1C1DD01800416BB3 /* House.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = House.png; sourceTree = "<group>"; };
-		967E7E2C1C1DD01800416BB3 /* SinisterClown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SinisterClown.png; sourceTree = "<group>"; };
-		967E7E2D1C1DD01800416BB3 /* Bacon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bacon.png; sourceTree = "<group>"; };
-		967E7E2E1C1DD01800416BB3 /* RoundedSquare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RoundedSquare.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,12 +60,6 @@
 		960480E51C1DCFA300841E01 /* SKDestructibleNode */ = {
 			isa = PBXGroup;
 			children = (
-				967E7E291C1DD01800416BB3 /* Circle.png */,
-				967E7E2A1C1DD01800416BB3 /* Mario.png */,
-				967E7E2B1C1DD01800416BB3 /* House.png */,
-				967E7E2C1C1DD01800416BB3 /* SinisterClown.png */,
-				967E7E2D1C1DD01800416BB3 /* Bacon.png */,
-				967E7E2E1C1DD01800416BB3 /* RoundedSquare.png */,
 				960480E61C1DCFA300841E01 /* AppDelegate.swift */,
 				960480E81C1DCFA300841E01 /* GameScene.sks */,
 				960480EA1C1DCFA300841E01 /* GameScene.swift */,
@@ -149,15 +131,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				967E7E321C1DD01800416BB3 /* SinisterClown.png in Resources */,
 				960480E91C1DCFA300841E01 /* GameScene.sks in Resources */,
-				967E7E2F1C1DD01800416BB3 /* Circle.png in Resources */,
 				960480F51C1DCFA300841E01 /* LaunchScreen.storyboard in Resources */,
 				960480F21C1DCFA300841E01 /* Assets.xcassets in Resources */,
-				967E7E311C1DD01800416BB3 /* House.png in Resources */,
-				967E7E341C1DD01800416BB3 /* RoundedSquare.png in Resources */,
-				967E7E301C1DD01800416BB3 /* Mario.png in Resources */,
-				967E7E331C1DD01800416BB3 /* Bacon.png in Resources */,
 				960480F01C1DCFA300841E01 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
