@@ -19,10 +19,6 @@ class SKDestructibleNode : SKSpriteNode {
         super.init(texture: texture, color: color, size: size)
     }
     
-    convenience init(test : String){
-        self.init(imageNamed: test)
-    }
-    
     convenience init(imageName: String, scene: SKScene, pieceSize : CGFloat){
         self.init(imageNamed: imageName)
         self.nodeScene = scene
