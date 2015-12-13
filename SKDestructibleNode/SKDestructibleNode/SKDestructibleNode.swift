@@ -85,6 +85,16 @@ class SKDestructibleNode : SKSpriteNode {
         return self.pieces
     }
     
+    func destroyWithBoom(boomStrength : Float, atPoint : CGPoint) -> Array<SKSpriteNode> {
+        let fieldNode = SKFieldNode.radialGravityField()
+        fieldNode.strength = -boomStrength
+        fieldNode.position = atPoint
+        nodeScene.addChild(fieldNode)
+        nodeScene.runAction(SKAction.sequence([SKAction.waitForDuration(0.01), SKAction.removeFromParent()]))
+        
+        return destroy()
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
