@@ -7,16 +7,25 @@ The image is broken up into square pieces and torn apart.  Physics bodies are cr
 
 The code for the SKDestructibleNode class can be found in SKDestructibleNode.swift.
 
+To create a piece broken with squares:
+
 ```swift
-let center = CGPoint(x: self.size.width/2, y: self.size.height/2)
 let node = SKDestructibleNode(imageName: "SinisterClown.png", scene: self, pieceSize: 25)
-node.position = center
+node.position = CGPoint(x: self.size.width/2, y: self.size.height/2)
 self.addChild(node)
 
 //The broken pieces are returned as an array of SKSpriteNodes
 let pieces = node.destroy()
 ```
+To create a piece broken with rectangles of a certain size:
+```swift
+let node = SKDestructibleNode(imageName: "SinisterClown.png", scene: self, rectSize: CGSize(width: 50, height: 20))
+node.position = CGPoint(x: self.size.width/2, y: self.size.height/2)
+self.addChild(node)
 
+//The broken pieces are returned as an array of SKSpriteNodes
+let pieces = node.destroy()
+```
 The SKDestructibleNode class takes care of matching the original nodes position, rotation, velocity, etc.  
 
 ### Examples
