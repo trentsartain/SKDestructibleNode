@@ -9,7 +9,8 @@ The code for the SKDestructibleNode class can be found in SKDestructibleNode.swi
 
 ```swift
 let center = CGPoint(x: self.size.width/2, y: self.size.height/2)
-let node = SKDestructibleNode(imageName: "SinisterClown.png", scene: self, initialPosition: center, pieceSize: 25)
+let node = SKDestructibleNode(imageName: "SinisterClown.png", scene: self, pieceSize: 25)
+node.position = center
 self.addChild(node)
 
 //The broken pieces are returned as an array of SKSpriteNodes
