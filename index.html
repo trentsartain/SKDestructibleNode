@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>SKDestructibleNode by trentsartain</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>SKDestructibleNode</h1>
+          <h2>A fully destructible node for SpriteKit.</h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/trentsartain/SKDestructibleNode/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/trentsartain/SKDestructibleNode/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/trentsartain/SKDestructibleNode" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <h1>
+<a id="skdestructiblenode" class="anchor" href="#skdestructiblenode" aria-hidden="true"><span class="octicon octicon-link"></span></a>SKDestructibleNode</h1>
+
+<p>This is an extension of the SKSpriteNode class and allows for destructible image nodes. It allows for an image to be rendered and used as an SKSpriteNode with the added feature of being able to be destroyed on command.  </p>
+
+<p>The image is broken up into square pieces and torn apart.  Physics bodies are created based on the alpha of the piece.  Therefore, more intricate pieces will have more intricate physics bodies (and will therefore have a performance impact).  All in all, the performance stays relatively good for most images. </p>
+
+<h3>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h3>
+
+<p>The code for the SKDestructibleNode class can be found in SKDestructibleNode.swift.</p>
+
+<p>To create a piece broken with squares:</p>
+
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">let</span> node <span class="pl-k">=</span> SKDestructibleNode(imageName: <span class="pl-s"><span class="pl-pds">"</span>SinisterClown.png<span class="pl-pds">"</span></span>, scene: <span class="pl-k">self</span>, pieceSize: <span class="pl-c1">25</span>)
+node<span class="pl-k">.</span>position <span class="pl-k">=</span> CGPoint(x: <span class="pl-k">self</span><span class="pl-k">.</span>size<span class="pl-k">.</span>width<span class="pl-k">/</span><span class="pl-c1">2</span>, y: <span class="pl-k">self</span><span class="pl-k">.</span>size<span class="pl-k">.</span>height<span class="pl-k">/</span><span class="pl-c1">2</span>)
+<span class="pl-k">self</span><span class="pl-k">.</span>addChild(node)
+
+<span class="pl-c">//The broken pieces are returned as an array of SKSpriteNodes</span>
+<span class="pl-k">let</span> pieces <span class="pl-k">=</span> node<span class="pl-k">.</span><span class="pl-c1">destroy</span>()</pre></div>
+
+<p>To create a piece broken with rectangles of a certain size:</p>
+
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">let</span> node <span class="pl-k">=</span> SKDestructibleNode(imageName: <span class="pl-s"><span class="pl-pds">"</span>SinisterClown.png<span class="pl-pds">"</span></span>, scene: <span class="pl-k">self</span>, rectSize: CGSize(width: <span class="pl-c1">50</span>, height: <span class="pl-c1">20</span>))
+node<span class="pl-k">.</span>position <span class="pl-k">=</span> CGPoint(x: <span class="pl-k">self</span><span class="pl-k">.</span>size<span class="pl-k">.</span>width<span class="pl-k">/</span><span class="pl-c1">2</span>, y: <span class="pl-k">self</span><span class="pl-k">.</span>size<span class="pl-k">.</span>height<span class="pl-k">/</span><span class="pl-c1">2</span>)
+<span class="pl-k">self</span><span class="pl-k">.</span>addChild(node)
+
+<span class="pl-c">//The broken pieces are returned as an array of SKSpriteNodes</span>
+<span class="pl-k">let</span> pieces <span class="pl-k">=</span> node<span class="pl-k">.</span><span class="pl-c1">destroy</span>()</pre></div>
+
+<p>Alternatively, you can destroy the node with a boom: </p>
+
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">let</span> pieces <span class="pl-k">=</span> destructibleNode<span class="pl-k">.</span>destroyWithBoom(<span class="pl-c1">0</span><span class="pl-k">.</span><span class="pl-c1">015</span>, atPoint: destructibleNode<span class="pl-k">.</span>position)</pre></div>
+
+<p>The SKDestructibleNode class takes care of matching the original nodes position, rotation, velocity, etc.  </p>
+
+<h3>
+<a id="examples" class="anchor" href="#examples" aria-hidden="true"><span class="octicon octicon-link"></span></a>Examples</h3>
+
+<p><img src="http://raw.githubusercontent.com/trentsartain/SKDestructibleNode/master/MarioBreak.gif" alt="Mario">
+<img src="http://raw.githubusercontent.com/trentsartain/SKDestructibleNode/master/BaconCrumble.gif" alt="Bacon">
+<img src="http://raw.githubusercontent.com/trentsartain/SKDestructibleNode/master/ClownDestruction.gif" alt="Clown">
+<img src="http://raw.githubusercontent.com/trentsartain/SKDestructibleNode/master/SquareBoom.gif" alt="Boom"></p>
+
+<h3>
+<a id="caveats" class="anchor" href="#caveats" aria-hidden="true"><span class="octicon octicon-link"></span></a>Caveats</h3>
+
+<ul>
+<li>Creating the physicsBodies this way is expensive.  The simpler the image, the better the performance will be.  Squares and circles work best. </li>
+<li>You will need to mess with the number of pieces for the given image.  The pieces are stored so that they can be instantly added to the scene upon destruction.  This means that the more pieces required to compose the image, the more memory will be eaten.</li>
+<li>Some images just don't work well with this.  Images with lots of detail (with alpha) will slow performance to a crawl. I'm working on some optimizations. </li>
+<li>There is apparently a bug where physics bodies don't actually touch.  This is why there is a small amount of space between the pieces.  I'm working on finding a fix for this. </li>
+</ul>
+
+<h3>
+<a id="whats-next" class="anchor" href="#whats-next" aria-hidden="true"><span class="octicon octicon-link"></span></a>What's next?</h3>
+
+<ul>
+<li>Optimizations</li>
+<li>Random/different piece sizes</li>
+<li>Options for how the image breaks (explosions, fadeouts, etc)</li>
+</ul>
+        </section>
+
+        <footer>
+          SKDestructibleNode is maintained by <a href="https://github.com/trentsartain">trentsartain</a><br>
+          This page was generated by <a href="https://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+        
+      </div>
+    </div>
+  </body>
+</html>
