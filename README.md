@@ -29,7 +29,7 @@ let pieces = node.destroy()
 
 Alternatively, you can destroy the node with a boom: 
 ```swift
-let pieces = destructibleNode.destroyWithBoom(0.015, atPoint: destructibleNode.position)
+let pieces = node.destroyWithBoom(0.015, atPoint: node.position)
 ```
 The SKDestructibleNode class takes care of matching the original nodes position, rotation, velocity, etc.  
 
