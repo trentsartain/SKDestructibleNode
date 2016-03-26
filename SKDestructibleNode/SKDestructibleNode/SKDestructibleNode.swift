@@ -6,7 +6,6 @@
 //  Copyright © 2015 Trent Sartain. All rights reserved.
 //
 
-
 import SpriteKit
 
 class SKDestructibleNode : SKSpriteNode {
@@ -42,8 +41,8 @@ class SKDestructibleNode : SKSpriteNode {
         
         let clone = SKSpriteNode(imageNamed: imageName)
         
-        for var i = 0; i < numSquaresAcross; i++ {
-            for var j = 0; j < numSquaresUp; j++ {
+        for i in 0 ..< numSquaresAcross {
+            for j in 0 ..< numSquaresUp {
                 let crop = SKCropNode()
                 let mask = SKSpriteNode(color: UIColor.blackColor(), size: rectSize)
                 mask.position = CGPoint(x: (CGFloat(i) * (rectSize.width)) + (rectSize.width/2) - self.size.width/2, y: (CGFloat(j) * (rectSize.height)) + (rectSize.height/2) - self.size.height/2)
